@@ -1,0 +1,480 @@
+/*Обнуление*/
+*,
+*:before,
+*:after {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  box-sizing: border-box;
+}
+/*--------------------*/
+html,
+body {
+  height: 100%;
+  font-family: Graphik, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-style: light;
+  font-size: 20px;
+  height: 100%;
+  margin: 0;
+}
+h2 {
+  font-family: Graphik, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  padding-top: 20px;
+  padding-left: 30px;
+}
+p {
+  font-family: Graphik, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  margin: 20px 20px 20px 20px;
+}
+
+.nav_container {
+  max-width: 100%;
+  margin: 0px auto;
+  padding: 0px 10px;
+  max-width: 90rem;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 50;
+}
+.navbar__loginButton {
+  background-color: #0c9cdf; /* Blue */
+  border: none;
+  color: white;
+  padding: 8px 25px;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+}
+.navbar__loginButton:hover {
+  box-shadow: 2px 2px 4px 5px rgba(0, 0, 0, 0.4);
+}
+
+.slideUp {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 50;
+}
+.slideUp::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+.slideUp .navbar__logo {
+  flex: 0 0 200px;
+  overflow: hidden;
+  position: relative;
+  z-index: 3;
+}
+/* border-bottom: 1px solid #e3e3e3; */
+/*  blue:	#002247  blackysh: #1c1f26 grey: #383f4d  white: #fdfdfd*/
+.navbar__body {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  align-items: center;
+}
+.navbar__logo {
+  flex: 0 0 250px;
+  overflow: hidden;
+  position: relative;
+  z-index: 3;
+}
+.navbar__logo img {
+  max-width: 100%;
+  display: block;
+}
+.navbar__burger {
+  display: none;
+}
+
+.navbar__list {
+  display: flex;
+  position: relative;
+  align-items: center;
+  z-index: 2;
+}
+.navbar__list li {
+  list-style: none;
+  margin: 0px 0px 0px 35px;
+}
+.navbar__link {
+  color: #fdfdfd;
+  text-transform: uppercase;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+@media (max-width: 767px) {
+  body.lock {
+    overflow: hidden;
+  }
+
+  .navbar__body {
+    height: 50px;
+  }
+  .navbar__logo {
+    flex: 0 0 140px;
+  }
+  .navbar__burger {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 20px;
+    z-index: 3;
+  }
+  .navbar__burger span {
+    position: absolute;
+    background-color: #fdfdfd;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    top: 9px;
+    transition: all 0.3s ease 0s;
+  }
+
+  .navbar__burger:before,
+  .navbar__burger:after {
+    content: "";
+    background-color: #fdfdfd;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    transition: all 0.3s ease 0s;
+  }
+  .navbar__burger:before {
+    top: 0;
+  }
+  .navbar__burger:after {
+    bottom: 0;
+  }
+  .navbar__burger.active:before {
+    transform: rotate(45deg);
+    top: 9px;
+  }
+  .navbar__burger.active:after {
+    transform: rotate(-45deg);
+    bottom: 9px;
+  }
+
+  .navbar__burger.active span {
+    transform: scale(0);
+  }
+
+  .navbar__menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 100px 10px 20px 10px;
+    transition: all 0.3s ease 0s;
+  }
+
+  .navbar__menu.active {
+    top: 0;
+  }
+  .navbar__list {
+    display: block;
+  }
+  .navbar__list li {
+    margin: 0 0 40px 0;
+    text-align: center;
+  }
+  .navbar__link {
+    color: #fdfdfd;
+    font-size: 28px;
+  }
+}
+
+/*Section Main*/
+.main {
+  background: url("img/poster.jpg");
+  height: auto;
+}
+
+/*Section item1*/
+.item1 {
+  border-bottom: 1px solid #e3e3e3;
+}
+/*Section item2*/
+.item2 {
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+.item3 {
+  background: transparent url(img/harley2.jpeg) no-repeat;
+  min-height: 300px;
+}
+
+#videoBg {
+  min-width: 100vh;
+  max-height: auto;
+  background: transparent url(img/poster.jpg) no-repeat;
+  background-size: cover;
+}
+video {
+  display: block;
+}
+.video-container {
+  width: 100%;
+  max-height: 70vh;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  #videoBg {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  #videoBg {
+    width: auto;
+    height: 100%;
+  }
+}
+
+@media (max-width: 875px) {
+  #videoBg {
+    display: none;
+  }
+  .main {
+    background-image: url("img/poster.png");
+  }
+}
+
+.textdiv {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  height: auto;
+  width: auto;
+  /*background: rgba(0, 0, 0, 0.4);*/
+  color: #f1f1f1;
+
+  text-shadow: 6px 6px 8px rgba(0, 0, 0, 0.9);
+}
+.textdiv h1 {
+  font-size: 3em;
+}
+.textdiv p {
+  font-size: 2em;
+}
+/*Footer */
+.footer-distributed {
+  background: #232a34;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  font: bold 16px sans-serif;
+  text-align: left;
+  padding: 50px 60px 40px;
+  overflow: hidden;
+}
+
+footer {
+  width: 100%;
+  display: inline-block;
+
+  height: 40vh;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left {
+  float: left;
+}
+
+.footer-left img {
+  max-width: 150px;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links {
+  color: #ffffff;
+  margin: 0 0 10px;
+  padding: 0;
+}
+
+.footer-distributed .footer-links a {
+  display: inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer__logo img {
+}
+
+/* Footer social icons */
+
+.footer-distributed .footer-icons {
+  margin-top: 40px;
+}
+
+.footer-distributed .footer-icons a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  background-color: #070617;
+  border-radius: 2px;
+
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
+
+  margin-right: 3px;
+  margin-bottom: 5px;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right {
+  float: right;
+}
+
+.footer-distributed .footer-right p {
+  display: inline-block;
+  vertical-align: top;
+  margin: 15px 42px 0 0;
+  color: #ffffff;
+}
+
+/* The contact form */
+
+.footer-distributed form {
+  display: inline-block;
+}
+
+.footer-distributed form input,
+.footer-distributed form textarea {
+  display: block;
+  border-radius: 3px;
+  box-sizing: border-box;
+  background-color: #1f2022;
+  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
+  border: none;
+  resize: none;
+
+  font: inherit;
+  font-size: 14px;
+  font-weight: normal;
+  color: #d1d2d2;
+
+  width: 400px;
+  padding: 18px;
+}
+
+.footer-distributed ::-webkit-input-placeholder {
+  color: #5c666b;
+}
+
+.footer-distributed ::-moz-placeholder {
+  color: #5c666b;
+  opacity: 1;
+}
+
+.footer-distributed :-ms-input-placeholder {
+  color: #5c666b;
+}
+
+.footer-distributed form input {
+  height: 55px;
+  margin-bottom: 15px;
+}
+
+.footer-distributed form textarea {
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+.footer-distributed form button {
+  border-radius: 3px;
+  background-color: #33383b;
+  color: #ffffff;
+  border: 0;
+  padding: 15px 50px;
+  font-weight: bold;
+  float: right;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 1000px) {
+  .footer-distributed {
+    font: bold 14px sans-serif;
+  }
+
+  .footer-distributed .footer-company-name {
+    font-size: 12px;
+  }
+
+  .footer-distributed form input,
+  .footer-distributed form textarea {
+    width: 250px;
+  }
+
+  .footer-distributed form button {
+    padding: 10px 35px;
+  }
+}
+
+@media (max-width: 800px) {
+  .footer-distributed {
+    padding: 30px;
+  }
+
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-right {
+    float: none;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .footer-distributed .footer-left {
+    margin-bottom: 40px;
+  }
+
+  .footer-distributed form {
+    margin-top: 30px;
+  }
+
+  .footer-distributed form {
+    display: block;
+  }
+
+  .footer-distributed form button {
+    float: none;
+  }
+}
